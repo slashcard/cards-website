@@ -1,0 +1,103 @@
+// Hero
+
+.hero {
+	margin-bottom: $global-section-padding;
+
+	@include breakpoint(medium) {
+		.button {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.hero--example {
+	border: 1px solid $secondary-color;
+	box-shadow: 0 2px 2px 0 rgba($secondary-color, .14), 0 3px 1px -2px rgba($secondary-color, .2), 0 1px 5px 0 rgba($secondary-color, .12);
+	// background: $secondary-color;
+	width: 100%;
+	padding: 0 rem-calc(15);
+	position: relative;
+
+	@include breakpoint(medium down) {
+		margin-bottom: $global-section-padding/2;
+	}
+}
+
+.example--top {
+	background: $secondary-color;
+	height: rem-calc(30);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+
+}
+
+.example--circle {
+	display: inline-block;
+	width: rem-calc(10);
+	height: rem-calc(10);
+	border-radius: 9999px;
+	background: $primary-color;
+	margin-top: rem-calc(9);
+	margin-bottom: rem-calc(9);
+	margin-left: rem-calc(5);
+}
+
+.example--tab {
+	display: inline-block;
+	width: rem-calc(150);
+	height: rem-calc(15);
+	border-radius: 4px;
+	background: #FFF;
+	margin-left: rem-calc(15);
+	margin-top: rem-calc(15);
+}
+
+.example--inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.example--card {
+	border: 1px solid $primary-color;
+	box-shadow: 0 2px 2px 0 rgba($secondary-color, .14), 0 3px 1px -2px rgba($secondary-color, .2), 0 1px 5px 0 rgba($secondary-color, .12);
+	background: $white;
+	color: $secondary-color;
+	width: 48.5%;
+	height: rem-calc(120);
+	float: left;
+	padding: rem-calc(30) rem-calc(15);
+
+	.fa {
+		margin-left: rem-calc(5);
+	}
+}
+
+.example--card.example--card__front {
+	background: $primary-color;
+	margin-right: rem-calc(10);
+
+	.card--text {
+		background: $white;
+	}
+}
+
+.card--text {
+	display: inline-block;
+	clear: both;
+	float: left;
+	width: 100%;
+	background: $primary-color;
+	height: rem-calc(10);
+	margin: 0;
+	padding: 0;
+	margin-bottom: rem-calc(14);
+
+	&__partial {
+		width: 50%;
+	}
+}

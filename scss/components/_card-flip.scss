@@ -1,0 +1,59 @@
+// Card flip animation
+// from https://davidwalsh.name/css-flip
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+	transform-style: preserve-3d;
+
+	margin-bottom: rem-calc(30);
+}
+
+/*  UPDATED! flip the pane when hovered */
+.flip-container.hover .back {
+	transform: rotateY(0deg);
+}
+.flip-container.hover .front {
+    transform: rotateY(-180deg);
+}
+
+.flip-container, .front, .back {
+	max-width: 100%;
+	// 619x359
+	max-width: rem-calc(619);
+	max-height: rem-calc(359);
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	box-shadow: 0 2px 2px 0 rgba($secondary-color, .14), 0 3px 1px -2px rgba($secondary-color, .2), 0 1px 5px 0 rgba($secondary-color, .12);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	float: left;
+}
+
+/*  UPDATED! front pane, placed above back */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}

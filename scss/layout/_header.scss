@@ -1,0 +1,58 @@
+// Header
+
+$header-background: $primary-color;
+.page--header {
+	background: $header-background;
+	box-shadow: 0 2px 2px 0 rgba($secondary-color, .14), 0 3px 1px -2px rgba($secondary-color, .2), 0 1px 5px 0 rgba($secondary-color, .12);
+	padding: rem-calc(20) 0;
+	margin-bottom: $global-section-padding;
+
+	@include breakpoint(small only) {
+		margin-bottom: $global-section-padding/2;
+	}
+
+	@include breakpoint(large) {
+		.logo {
+			margin: 0;
+			padding: 0;
+			position: relative;
+			left: rem-calc(-15);
+		}
+	}
+
+	&, h1, a {
+		color: $white;
+
+	}
+
+	a:hover, .slash {
+		color: $secondary-color;
+	}
+
+	.rolodex {
+		display: inline-block;
+		border: 1px solid $white;
+		overflow: hidden;
+		margin: rem-calc(11) 0;
+	}
+
+	.rolodex--title, .rolodex--actions {
+		display: inline-block;
+		line-height: 1;
+		padding: rem-calc(10);
+		margin: 0;
+	}
+
+	.rolodex--title {
+		background: $white;
+		color: $primary-color;
+		border-right: 1px solid $white;
+		font-weight: $global-weight-bold;
+	}
+}
+
+@include breakpoint(medium) {
+	.header--right {
+		text-align: right;
+	}
+}

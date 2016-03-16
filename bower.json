@@ -1,0 +1,23 @@
+{
+  "name": "cards-website",
+  "version": "0.0.1",
+  "authors": [
+    "Jordan Gardiner <hello@jordsta.com>"
+  ],
+  "description": "The /cards project website.",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://foundation.zurb.com",
+  "dependencies": {
+    "foundation-sites": "~6.2.0",
+    "motion-ui": "~1.2.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}

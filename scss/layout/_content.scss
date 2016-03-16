@@ -1,0 +1,27 @@
+// Content
+
+::selection {
+	background: $secondary-color;
+	color: $black;
+}
+
+a {
+	font-weight: $global-weight-bold;
+}
+
+section.section {
+	margin-bottom: $global-section-padding;
+
+	@include breakpoint(large) {
+		h3.with-permalink {
+			position: relative;
+			left: rem-calc(-35);
+		}
+	}
+}
+
+.success.callout {
+	background: $success-color;
+	border-color: lighten($success-color, 15%);
+	// color: $white;
+}
