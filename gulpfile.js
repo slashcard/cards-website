@@ -1,6 +1,7 @@
 var $        = require('gulp-load-plugins')();
 var argv     = require('yargs').argv;
 var gulp     = require('gulp');
+var cleanCSS = require('gulp-clean-css');
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -39,14 +40,14 @@ var PATHS = {
     // 'bower_components/foundation-sites/js/foundation.tabs.js',
     // 'bower_components/foundation-sites/js/foundation.toggler.js',
     // 'bower_components/foundation-sites/js/foundation.tooltip.js',
-    'js/!(app.js)**/*.js',
-    'js/app.js'
+    'js/app.js',
+    '!js/app.min.js'
   ]
 };
 
 gulp.task('sass', function() {
   var uncss = $.if(isProduction, $.uncss({
-    html: ['src/**/*.html'],
+    html: ['index.html'],
     ignore: [
       new RegExp('.foundation-mq'),
       new RegExp('^\.is-.*'),
@@ -55,7 +56,7 @@ gulp.task('sass', function() {
     ]
   }));
 
-  var minifycss = $.if(isProduction, $.minifyCss());
+  var minifycss = $.if(isProduction, cleanCSS());
 
   return gulp.src('scss/app.scss')
     .pipe($.sourcemaps.init())
@@ -83,6 +84,7 @@ gulp.task('javascript', function() {
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
     .pipe($.concat('app.js'))
+    .pipe($.babel())
     .pipe(uglify)
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe($.rename({suffix: '.min'}))
