@@ -11,15 +11,6 @@ $header-background: $primary-color;
 		margin-bottom: $global-section-padding/2;
 	}
 
-	@include breakpoint(large) {
-		.logo {
-			margin: 0;
-			padding: 0;
-			position: relative;
-			left: rem-calc(-15);
-		}
-	}
-
 	&, h1, a {
 		color: $white;
 
