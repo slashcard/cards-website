@@ -24,14 +24,23 @@ $header-background: $primary-color;
 		display: inline-block;
 		border: 1px solid $white;
 		overflow: hidden;
-		margin: rem-calc(11) 0;
+		margin: rem-calc(11) rem-calc(80) 0 0;
+
+		@include breakpoint(large) {
+			margin-right: rem-calc(40);
+		}
 	}
 
 	.rolodex--title, .rolodex--actions {
 		display: inline-block;
+		font-size: 85%;
 		line-height: 1;
 		padding: rem-calc(10);
 		margin: 0;
+
+		@include breakpoint(large) {
+			font-size: 100%;
+		}
 	}
 
 	.rolodex--title {
