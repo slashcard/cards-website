@@ -91,6 +91,17 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('js'));
 });
 
+gulp.task('build',  ['sass', 'javascript'], function() {
+  gulp.src([
+      'index.html',
+      '**/css/**/*',
+      '**/fonts/**/*',
+      '**/img/**/*',
+      '**/js/**/*',
+      ])
+    .pipe(gulp.dest('.build'))
+});
+
 gulp.task('default', ['sass', 'javascript'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
   gulp.watch(['js/**/*.js', '!js/**/app.min.js'], ['javascript']);
